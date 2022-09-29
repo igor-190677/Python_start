@@ -14,17 +14,22 @@ def input_coordinate():
             flag = True
         except ValueError:
             print("Это не число!")
+        if coordinate == 0:
+            print('Значение координаты не должно быть равно 0!')
+            flag = False
     return coordinate
 
 def definition_quarter(coord_x, coord_y):
-    if coord_x > 0 and coord_y > 0:
-        quarter = 1
-    if coord_x < 0 and coord_y > 0:
-        quarter = 2
-    if coord_x < 0 and coord_y < 0:
-        quarter = 3
-    if coord_x > 0 and coord_y < 0:
-        quarter = 4        
+    if coord_x > 0:
+        if coord_y > 0:
+            quarter = 1
+        else:
+            quarter = 4
+    else:
+        if coord_y > 0:
+            quarter = 2
+        else:
+            quarter = 3      
     print('Точка находится в четверти', quarter)
 
 

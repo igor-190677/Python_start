@@ -9,21 +9,18 @@ import math
 
 def input_points():
     points = {}
-    for point in range(2):
-        if point == 0:
-            print('Введите координаты точки А:')
+    for point in 'A', 'B':
+        if point == 'A':
+            ax = int(input(f'Введите координату X точки {point}: '))
+            ay = int(input(f'Введите координату Y точки {point}: '))
         else:
-            print('Введите координаты точки B:')
-        for coordinate in range(2):
-            if coordinate == 0:
-                points[point, coordinate] = int(input('X: '))
-            else:
-                points[point, coordinate] = int(input('Y: '))
-    return points
+            bx = int(input(f'Введите координату X точки {point}: '))
+            by = int(input(f'Введите координату Y точки {point}: '))
+    return ax, ay, bx, by
 
-def definition_length(points_array):
-    length = math.sqrt(pow((points_array[0, 0] - points_array[1, 0]), 2) + pow((points_array[0, 1] - points_array[1, 1]), 2))
+def definition_length(a1, a2, b1, b2):
+    length = math.sqrt(pow((a1 - b1), 2) + pow((a2 - b2), 2))
     print('Длина отрезка АВ равна', math.floor(length * 100) / 100)
     
-array_points = input_points()
-definition_length(array_points)
+ax, ay, bx, by = input_points()
+definition_length(ax, ay, bx, by)
