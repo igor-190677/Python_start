@@ -18,10 +18,10 @@ def input_number():
     return number
 
 def add_sequences(sequences):
-    tuple_sequenses = {}
+    dict_sequenses = {}
     for number in range(1, sequences + 1):
-        tuple_sequenses[number] = round(sum_sequences(number))
-    return tuple_sequenses
+        dict_sequenses[number] = round(sum_sequences(number))
+    return dict_sequenses
 
 def sum_sequences(number_seq):
     sequence = 0
